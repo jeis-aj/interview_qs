@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <math.h>
 
 
 int find_prime(int num);
@@ -22,15 +21,15 @@ int find_prime(int num)
 {
 	int prime_count = 0;
 	while (prime_count <= num){
+		int j;
 		bool flag = 0;
 		/* for (int j=0; j <= sqrt(num); j++){ */
-		for (int j=0; j <= num; j++){
+		for (j=0; j <= num/2; j++){
 			if (num%j == 0){
-				flag = 1;
 				break;
 			}
 		}
-		if (flag == 0){
+		if (j == num/2){
 			printf("%d\t", num);
 			prime_count++;
 		}
@@ -38,3 +37,4 @@ int find_prime(int num)
 	}
 	return num;
 }
+

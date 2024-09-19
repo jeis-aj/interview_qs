@@ -8,31 +8,21 @@
 
 /* #define MANUAL */
 
-// Function prototype to find the substring index
 int find_substr(char* sentence, char* word);
 int main()
 {
     // Sentence declaration
-#ifndef  MANUAL
     char sentence[] = "hhello world how are you hope all are fine";
-#else
-    size_t buffsize = 32;
-    char sentence[100];
-    printf("Enter sentence: \n");
-    getline(sentence",sentence);
-#endif
 
     printf(GREEN "sentence: " RED "\n\t\"%s\"\n" CLEAR, sentence);
     
     // Input word
     char word[10];
     printf("Enter a word (max len 10): ");
-    scanf("%9s", word); // Limiting input to avoid buffer overflow
+    scanf("%s", word);
     
-    // Find substring index
     int index = find_substr(sentence, word);
 
-    // Result handling
     if (index == -1) {
         printf("Sub-string not found !!\n");
     } else {

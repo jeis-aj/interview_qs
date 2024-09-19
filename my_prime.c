@@ -37,7 +37,7 @@ int find_prime(int num) {
 		}
 
 		if (is_prime) {
-			/* printf("%d\n", current_number); */			// debug purpsoe
+			/* printf("%d\n", current_number); // debug purpsoe */
 			prime_count++;
 			if (prime_count == num) {
 				return current_number;		// if nth prime reached return

@@ -36,13 +36,13 @@ int find_substr(char* sentence, char* word)
 	int j = 0;
 	for (int i = 0; i < strlen(sentence); ++i){
 		/* bool c_match = sentence[i] == word[j]; */
-		if (sentence[i] == word[j])
+		if (sentence[i] == word[j]){
 			temp_index = i;
-
-		while (sentence[++i] == word[++j])
-			if (strlen(word)-1 == j) return i; 
-			else i = temp_index;
+			while (sentence[++i] == word[++j])
+				if (strlen(word)-1 == j) goto found; 
 			j = 0;
+		}
+		i = temp_index;
 	}
 
 	return index;

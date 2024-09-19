@@ -21,10 +21,11 @@ void pyramid(int sz)
 	for (int i = 0; i <= sz; ++i){
 		int space = (sz - i) / 2 + 1;
 		printf("\n");
-		/* printf("%d", space); */
-		while (--space){
-				printf("\t");
-		}
+
+		/* printf("%d", space); */		// debug purpose
+
+		while (--space) printf("\t");		// print space  for pymamid look
+
 		for (int j = 0; j < i; ++j){
 			printf("*\t");
 		}
