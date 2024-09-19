@@ -1,28 +1,33 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-void pyramid(int sz);
+void odd_pyramid(int sz);
 void main()
-{	int num; 
+{	
+	int num; 
+start:
 	printf("Enter a Number: \r\n");
 	scanf("%d", &num);
-
+	/*
 	// input validation 
-	if (num < 1)
-		printf("!! Enter valid number \r\n");
+	if (num % 2 == 0){
+	printf("!! Enter valid Odd number \r\n");
+	goto start;
+	}
+	*/
 
 	// print pyramid
-	pyramid(num);
+	odd_pyramid(num);
 }
 
-void pyramid(int sz)
+void odd_pyramid(int sz)
 {
-	for (int i = 0; i <= sz; ++i){
+	for (int i = -2; i <= sz; i+=2){
 		int space = (sz - i) / 2 + 1;
 		printf("\n");
 		/* printf("%d", space); */
 		while (--space){
-				printf("\t");
+			printf("\t");
 		}
 		for (int j = 0; j < i; ++j){
 			printf("*\t");

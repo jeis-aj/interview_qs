@@ -9,8 +9,10 @@ void main()
 	scanf("%d", &num);
 
 	// input validation 
-	if (num < 1)
+	if (num < 1){
 		printf("!! Enter valid number \r\n");
+		return;
+	}
 
 	// print pyramid
 	pyramid(num);
