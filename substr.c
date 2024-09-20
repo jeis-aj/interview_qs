@@ -18,33 +18,13 @@ void main()
 	scanf("%s",word);
 	/* printf("word: %s",word); */
 
-	int index = find_substr(sentence, word);
+	char *c = strstr(sentence, word);
+	int index = c - sentence;
 
-	if (index == -1){
+	if (c == NULL){
 		printf(" Not found !!\n");
 	} else {
 		printf("sub string  found at index %d \n", index);
 	}
-
-}
-
-int find_substr(char* sentence, char* word)
-{
-	int index = -1;		// if substr no match found return index -1
-	bool match = false;
-	int temp_index;
-	int j = 0;
-	for (int i = 0; i < strlen(sentence); ++i){
-		/* bool c_match = sentence[i] == word[j]; */
-		if (sentence[i] == word[j]){
-			temp_index = i;
-			while (sentence[++i] == word[++j])
-				if (strlen(word)-1 == j) goto found; 
-			j = 0;
-		}
-		i = temp_index;
-	}
-
-	return index;
 
 }

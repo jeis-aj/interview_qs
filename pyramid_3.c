@@ -32,7 +32,7 @@ void pyramid(int sz)
 			printf("    ");		// print space  for pymamid look
 
 		for (int j = 0; j < i; ++j){
-			printf("*        ");
+			printf("*       ");
 		}
 	}
 
